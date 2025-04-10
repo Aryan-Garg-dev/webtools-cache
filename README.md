@@ -1,14 +1,22 @@
 # Cache
 ### Lightweight Redis caching decorators and wrappers for Node and Bun
 
-To install dependencies:
+## To install dependencies:
 ```bash
 bun install @gargdev/cache
 # or
 npm install @gargdev/cache
 ```
 
-Example:
+## Requirements
+This package relies on:
+- `ioredis` (^5.6.0) - Redis client
+- `superjson` (^2.2.2) - Enhanced JSON serialization and deserialization.
+- `fast-json-stable-stringify` (^2.1.0) - Deterministic JSON stringification
+
+These are included automatically when you install `@gargdev/cache`.
+
+> Example: (redis)
 ```javascript
 import { setRedisClient, cache, withCache } from "@gargdev/cache"
 import { Redis } from "ioredis";
@@ -74,7 +82,7 @@ class TodoService {
 TodoService.invalidateTodos();
 ```
 
-How to use fetch client?
+> How to use fetch adapter?
 ```javascript
 import { createFetchClient, setRedisClient } from "@gargdev/cache";
 import { Redis } from "ioredis";
@@ -127,6 +135,5 @@ Bun.serve({
     return new Response("Not found", { status: 404 })
   }
 })
-
 
 ```
