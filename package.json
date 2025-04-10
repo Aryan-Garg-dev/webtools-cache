@@ -1,6 +1,6 @@
 {
   "name": "@gargdev/cache",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Lightweight Redis caching decorators and wrappers for Node and Bun",
   "type": "module",
   "main": "./dist/index.js",
@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "dev": "bun --watch examples/http-server.ts",
-    "build": "bunx tsc -p tsconfig.build.json && bun build src/index.ts --outdir dist"
+    "build": "bunx tsc -p tsconfig.build.json && bun build src/index.ts --minify --target=node --outdir dist --external=ioredis --external=superjson --external=fast-json-stable-stringify"
   },
   "devDependencies": {
     "@types/bun": "latest"
