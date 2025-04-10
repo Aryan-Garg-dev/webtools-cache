@@ -1,4 +1,4 @@
-import { setRedisClient, cache, withCache } from "@aryan_garg_30/cache"
+import { setRedisClient, cache, withCache } from "@gargdev/cache"
 import { Redis } from "ioredis";
 
 setRedisClient(new Redis(6380));

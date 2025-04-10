@@ -1,6 +1,6 @@
 {
-  "name": "@aryan_garg_30/cache",
-  "version": "1.0.2",
+  "name": "@gargdev/cache",
+  "version": "1.0.0",
   "description": "Lightweight Redis caching decorators and wrappers for Node and Bun",
   "type": "module",
   "main": "./dist/index.js",
