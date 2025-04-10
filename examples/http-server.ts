@@ -16,7 +16,7 @@ const fetchTodos = async (): Promise<Todos> => {
 const fetchCachedTodos = withCache(fetchTodos, { ttl: 60, prefix: "todos" });
 
 // using cache decorator
-class ProductService {
+class TodoService {
   @cache({ ttl: 60, prefix: "todos" })
   static async fetchTodos(){
     return await fetchTodos();
@@ -28,7 +28,7 @@ Bun.serve({
   routes: {
     "/api/todos/decorator": {
       GET: async () => {
-        const todos = await ProductService.fetchTodos();
+        const todos = await TodoService.fetchTodos();
         return Response.json({ data: todos }, { status: 200 });
       }
     },
