@@ -1,15 +1,3 @@
-# Cache
-### Lightweight Redis caching decorators and wrappers for Node and Bun
-
-To install dependencies:
-```bash
-bun install @gargdev/cache
-# or
-npm install @gargdev/cache
-```
-
-Example:
-```javascript
 import { setRedisClient, cache, withCache } from "@gargdev/cache"
 import { Redis } from "ioredis";
 
@@ -21,7 +9,6 @@ const fetchTodos = async (): Promise<Todos> => {
   const res = await fetch("https://jsonplaceholder.typicode.com/todos", { method: "GET" });
   const todos = await res.json();
   return todos as Todos;
-
 }
 
 // using withCache wrapper
@@ -55,21 +42,4 @@ Bun.serve({
     return new Response("Not found", { status: 404 })
   }
 })
-```
 
-To invalidate Cache
-```javascript
-// for wrapper
-fetchCachedTodos.invalidate();
-
-// for decorator, create another method
-import { invalidateCacheByPrefix } from "@gargdev/cache"
-
-class TodoService {
-  static async invalidateTodos(){
-    await invalidateCacheByPrefix("prefix");
-  }
-}
-
-TodoService.invalidateTodos();
-```

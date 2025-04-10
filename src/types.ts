@@ -3,4 +3,10 @@ export interface CacheOptions {
   prefix?: string
 }
 
-export type AsyncMethod<TArgs extends any[], TResult> = (...args: TArgs) => Promise<TResult>;
+export type AsyncFunc<TArgs extends any[] = any[], TResult = any> = (
+  ...args: TArgs
+) => Promise<TResult>;
+
+export type CacheEnhanced<TArgs extends any[], TResult> = AsyncFunc<TArgs, TResult> & {
+  invalidate: () => Promise<void>;
+};

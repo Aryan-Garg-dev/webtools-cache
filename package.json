@@ -1,6 +1,6 @@
 {
   "name": "@gargdev/cache",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "Lightweight Redis caching decorators and wrappers for Node and Bun",
   "type": "module",
   "main": "./dist/index.js",
@@ -17,8 +17,8 @@
     "dist"
   ],
   "scripts": {
-    "dev": "bun example/http-server.ts",
-    "build": "bunx tsc && bun build src/index.ts --outdir dist"
+    "dev": "bun --watch examples/http-server.ts",
+    "build": "bunx tsc -p tsconfig.build.json && bun build src/index.ts --outdir dist"
   },
   "devDependencies": {
     "@types/bun": "latest"

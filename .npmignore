@@ -1,0 +1,9 @@
+src/
+examples/
+tsconfig.json
+tsconfig.build.json
+.env
+*.test.ts
+*.spec.ts
+.vscode/
+.cache/

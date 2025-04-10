@@ -1,7 +1,8 @@
-import type { CacheOptions, AsyncMethod } from "./types";
-import { getRedisClient } from "@cache/redis-client";
+import type { CacheOptions, AsyncFunc } from "./types";
+import { getRedisClient } from "./redis-client";
 import superjson from "superjson"
 import stringify from "fast-json-stable-stringify";
+
 
 function cache<TArgs extends any[], TResult>(
   { ttl = 60, prefix = "" }: CacheOptions = {}
@@ -9,7 +10,7 @@ function cache<TArgs extends any[], TResult>(
   return function (
     _target: any,
     propertyKey: string | symbol,
-    descriptor: TypedPropertyDescriptor<AsyncMethod<TArgs, TResult>>
+    descriptor: TypedPropertyDescriptor<AsyncFunc<TArgs, TResult>>
   ): void {
     const redis = getRedisClient();
     const originalMethod = descriptor.value!;
@@ -30,3 +31,4 @@ function cache<TArgs extends any[], TResult>(
 export {
   cache
 }
+
