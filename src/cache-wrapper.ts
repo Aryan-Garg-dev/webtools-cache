@@ -1,4 +1,4 @@
-import type { CacheOptions, AsyncMethod } from "@cache/types";
+import type { CacheOptions, AsyncMethod } from "./types";
 import { getRedisClient } from "@cache/redis-client";
 import superjson from "superjson"
 import stringify from "fast-json-stable-stringify";
