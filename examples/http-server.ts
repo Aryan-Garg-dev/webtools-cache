@@ -24,8 +24,8 @@ const fetchPosts = async (id?: number): Promise<Posts> => {
 
 const fetchPostsAndTodos = async (id?: number): Promise<{posts: Posts, todos: Todos}> => {
   const [posts, todos] = await Promise.all([
-    await fetchPosts(id),
-    await fetchTodos(id)
+    fetchPosts(id),
+    fetchTodos(id)
   ])
   return { posts, todos };
 }
