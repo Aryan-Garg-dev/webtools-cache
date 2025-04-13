@@ -1,7 +1,11 @@
 # Cache
-### Lightweight Redis caching decorators and wrappers for Node and Bun
+### One caching system to rule them all — decorators, middlewares, wrappers, and global adapters, in client and server alike.
+`Typed, pluggable, and zero-config caching that just works.`
+> "The missing cache layer for your fullstack app"
 
-## To install dependencies:
+*It is currently in development. Not recommended to use in production.*
+
+## To install:
 ```bash
 bun install @gargdev/cache
 # or

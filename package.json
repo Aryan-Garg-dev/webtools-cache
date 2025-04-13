@@ -1,12 +1,25 @@
 {
   "name": "@gargdev/cache",
-  "version": "1.0.11",
-  "description": "Lightweight Redis caching decorators and wrappers for Node and Bun",
+  "version": "0.0.1",
+  "description": "A universal caching solution with a global storage adapter, Fetch/Axios wrappers, decorators, and middleware support — for both client and server.",
+  "author": {
+    "name": "Aryan Garg",
+    "url": "https://www.npmjs.com/~gargdev"
+  },
+  "homepage": "https://github.com/Aryan-Garg-dev/webtools-cache",
+  "bugs": {
+    "url": "https://github.com/Aryan-Garg-dev/webtools-cache/issues"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/Aryan-Garg-dev/webtools-cache.git"
+  },
+  "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "private": "false",
-  "keywords": ["ioredis", "bun"],
+  "keywords": ["redis", "ioredis", "bun", "node", "cache", "superjson", "fast-json-stable-stringify"],
   "exports": {
     ".": {
       "import": "./dist/index.js",
